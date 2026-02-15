@@ -22,15 +22,18 @@ This tool mainly focus on streamline inventory and tracking of parts, materials,
 1. Enable environment
 ```bash
 > py -m venv .venv
+```
+```bash
 > .venv\Scripts\activate
 ```
 2. Requirements installation
 ```bash
 pip install -r requirements.txt
 ```
-3. Change the folder path of SQLite.
+3. Create '.env' file and store the SQLite path
 ```bash
-database_engine_path = 'sqlite:////Users/Mun/Desktop/Python/Projects/Streamlit Applications/Inventory System/db/inventory_system_database.db'
+DATABASE_PATH = ""
+BACKUP_DATABASE = ""
 ```
 4. Run the program using streamlit
 ```bash

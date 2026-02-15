@@ -3,9 +3,11 @@ from sqlalchemy.orm import declarative_base, Session, Mapped, mapped_column
 import sqlite3
 import pandas as pd
 from datetime import datetime
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
-database_engine_path = 'sqlite:////Users/Mun/Desktop/Python/Projects/Streamlit Applications/Inventory System/db/inventory_system_database.db'
-engine = create_engine(database_engine_path)
+engine = create_engine(os.getenv('DATABASE_PATH'))
 
 Base = declarative_base()
 

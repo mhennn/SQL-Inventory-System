@@ -2,9 +2,11 @@ from sqlalchemy import create_engine, Integer, String, Float, Date, DateTime
 from sqlalchemy.orm import declarative_base, Session, Mapped, mapped_column
 from db.database import DataContent
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-recorded_database_engine = 'sqlite:////Users/Mun/Desktop/Python/Projects/Streamlit Applications/Inventory System/db/record_database.db'
-recorded_data_engine = create_engine(recorded_database_engine)
+recorded_data_engine = create_engine(os.getenv('BACKUP_DATABASE'))
 
 Base = declarative_base()
 

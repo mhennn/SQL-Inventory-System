@@ -1,3 +1,4 @@
 SQLAlchemy
 Streamlit
 pandas
+dotenv
