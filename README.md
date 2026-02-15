@@ -11,11 +11,11 @@ This tool mainly focus on streamline inventory and tracking of parts, materials,
 
 #### Streamlit Preview - Add Item
 
-@import "sample/Add_Item.png"
+![Add Item Preview](sample/Add_Item.png)
 
 #### Streamlit Preview - Search Item
 
-@import "sample/Search_Item.png"
+![Add Item Preview](sample/search_item.png)
 
 ### How to use?
 
