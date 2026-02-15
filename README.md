@@ -1,0 +1,42 @@
+# SQL Inventory System
+
+This tool mainly focus on streamline inventory and tracking of parts, materials, price, and selling price. The main feature of this is its web-based functionality that can be access easily.
+
+### What's great about this?
+- ⭐ Easy to access
+- ⭐ Web-based feature (great for simultaneuous usage)
+- ⭐ Minimal design with no additional bloated features
+- ⭐ Use SQLite as its database with easiness to modify
+- ⭐ Backup the deleted data with another database
+
+#### Streamlit Preview - Add Item
+
+@import "sample/Add Item.png"
+
+#### Streamlit Preview - Search Item
+
+@import "sample/Search Item.png"
+
+### How to use?
+
+1. Enable environment
+```bash
+> py -m venv .venv
+> .venv\Scripts\activate
+```
+2. Requirements installation
+```bash
+pip install -r requirements.txt
+```
+3. Change the folder path of SQLite.
+```bash
+database_engine_path = 'sqlite:////Users/Mun/Desktop/Python/Projects/Streamlit Applications/Inventory System/db/inventory_system_database.db'
+```
+4. Run the program using streamlit
+```bash
+streamlit run app.py
+```
+5. Check data on database
+
+---
+##### Enjoy using SQL Inventory System - Streamlit
