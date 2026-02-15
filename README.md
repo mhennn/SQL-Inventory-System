@@ -32,8 +32,8 @@ pip install -r requirements.txt
 ```
 3. Create '.env' file and store the SQLite path
 ```bash
-DATABASE_PATH = ""
-BACKUP_DATABASE = ""
+DATABASE_PATH = "sqlite:///db/database.db"
+BACKUP_DATABASE = "sqlite:///db/database.db"
 ```
 4. Run the program using streamlit
 ```bash
