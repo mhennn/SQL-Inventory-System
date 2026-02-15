@@ -15,7 +15,7 @@ This tool mainly focus on streamline inventory and tracking of parts, materials,
 
 #### Streamlit Preview - Search Item
 
-![Add Item Preview](sample/search_item.png)
+![Search Item Preview](sample/search_item.png)
 
 ### How to use?
 
