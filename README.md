@@ -21,10 +21,10 @@ This tool mainly focus on streamline inventory and tracking of parts, materials,
 
 1. Enable environment
 ```bash
-> py -m venv .venv
+py -m venv .venv
 ```
 ```bash
-> .venv\Scripts\activate
+.venv\Scripts\activate
 ```
 2. Requirements installation
 ```bash
