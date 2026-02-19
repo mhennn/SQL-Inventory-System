@@ -40,6 +40,10 @@ BACKUP_DATABASE = "sqlite:///db/database.db"
 streamlit run app.py
 ```
 5. Check data on database
+6. Check this out
+```bash
+https://sql-inventory-system.streamlit.app/
+```
 
 ---
 ##### Enjoy using SQL Inventory System - Streamlit
