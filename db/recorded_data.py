@@ -6,7 +6,9 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-recorded_data_engine = create_engine(os.getenv('BACKUP_DATABASE'))
+base_dir = os.path.abspath(os.path.dirname(__file__))
+db_path = os.path.join(base_dir, 'record_database.db')
+recorded_data_engine = create_engine(f"sqlite:///{db_path}")
 
 Base = declarative_base()
 

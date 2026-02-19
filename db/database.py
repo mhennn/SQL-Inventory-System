@@ -7,7 +7,9 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-engine = create_engine(os.getenv('DATABASE_PATH'))
+base_dir = os.path.abspath(os.path.dirname(__file__))
+db_path = os.path.join(base_dir, 'inventory_system_database.db')
+engine = create_engine(f"sqlite:///{db_path}")
 
 Base = declarative_base()
 
