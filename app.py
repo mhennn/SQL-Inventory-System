@@ -87,16 +87,19 @@ with container:
             registrator = st.text_input("Register By", key="register", help="name")
 
         if st.button("Add to Inventory", width="stretch"):
-            try:
-                st.success(f"{barcode} is successfully added")
-                time.sleep(2)
-                data_content.add_content(barcode=barcode, item=item_name, quantity=quantity,
-                                        price=item_price, selling_price=selling_price,
-                                        registrator=registrator)
-            except ValueError:
+            if not barcode or not item_name or not quantity or not item_price or not selling_price or not registrator:
                 st.error("Invalid input. Please check inputted data")
             else:
-                clear_field()
+                try:
+                    st.success(f"{barcode} is successfully added")
+                    time.sleep(2)
+                    data_content.add_content(barcode=barcode, item=item_name, quantity=quantity,
+                                            price=item_price, selling_price=selling_price,
+                                            registrator=registrator)
+                except ValueError:
+                    st.error("Invalid input. Please check inputted data")
+                else:
+                    clear_field()
 
         if st.button("Clear Data", on_click=clear_box, width="stretch"):
             st.info("Data Cleared")
