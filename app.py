@@ -36,11 +36,17 @@ def clear_field():
 
 container = st.container(border=True)
 
-if st.button("DB"):
-    st.dataframe(data_content.get_all_data(),
-                 hide_index=True,
-                 column_order=column_order,
-                 column_config=column_name)
+db_container = st.container(border=True)
+with db_container:
+    if st.button("DB"):
+        if data_content.check_exist_table():
+            st.dataframe(data_content.get_all_data(),
+                        hide_index=True,
+                        column_order=column_order,
+                        column_config=column_name)
+        
+    if st.button("eXe"):
+        data_content.delete_table()
     
 with container:
     option_buttons = st.columns(2)

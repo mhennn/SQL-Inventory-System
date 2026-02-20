@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Integer, String, Float, DateTime
+from sqlalchemy import create_engine, Integer, String, Float, DateTime, inspect
 from sqlalchemy.orm import declarative_base, Session, Mapped, mapped_column
 import sqlite3
 import pandas as pd
@@ -59,3 +59,15 @@ class DataContent:
             for data in all_data:
                 df = pd.DataFrame(data.__dict__ for data in all_data).drop('_sa_instance_state', axis=1)
                 return df
+            
+    def delete_table(self):
+        Base.metadata.drop_all(engine)
+        Base.metadata.create_all(engine)
+
+    def check_exist_table(self):
+        inspect_table = inspect(engine)
+        table_names = inspect_table.get_table_names()
+        if "stocks" in table_names:
+            return True
+        else:
+            return False
