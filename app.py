@@ -17,7 +17,7 @@ column_name = {
     "registration_date": "Registration Date"
 }
 
-st.set_page_config("SQL Inventory System", layout="wide")
+st.set_page_config("SQL Inventory System")
 st.markdown(
     '<h1>SQL Inventory System ⛁ </h1>',
     unsafe_allow_html=True
@@ -44,10 +44,10 @@ with db_container:
                         hide_index=True,
                         column_order=column_order,
                         column_config=column_name)
-        
-    if st.button("eXe"):
+
+    if st.button("Reset Data"):
         data_content.delete_table()
-    
+
 with container:
     option_buttons = st.columns(2)
     with option_buttons[0]:
