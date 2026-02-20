@@ -38,7 +38,7 @@ container = st.container(border=True)
 
 db_container = st.container(border=True)
 with db_container:
-    if st.button("DB"):
+    if st.button("Database"):
         if data_content.check_exist_table():
             st.dataframe(data_content.get_all_data(),
                         hide_index=True,
