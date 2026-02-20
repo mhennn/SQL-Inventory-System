@@ -1,6 +1,6 @@
 # SQL Inventory System
 
-This tool mainly focus on streamline inventory and tracking of parts, materials, price, and selling price. The main feature of this is its web-based functionality that can be access easily.
+This tool mainly focus on streamline inventory and tracking of parts, materials, price, and selling price. The main feature of this is its web-based functionality that can be access easily. Which has additional feature of backing up the specific data when deleted.
 
 ### What's great about this?
 - ⭐ Easy to access
