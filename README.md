@@ -17,6 +17,33 @@ This tool mainly focus on streamline inventory and tracking of parts, materials,
 
 ![Search Item Preview](sample/search_item.png)
 
+### Structure Design
+
+```mermaid
+graph TD
+    A[Start Streamlit App] --> B{User Action}
+
+    %% Add Item Logic
+    B -->|Add Item| C[Input Item Details]
+    C --> D[Insert into Main SQL DB]
+    D --> E[Display Success Message]
+
+    %% Search Logic
+    B -->|Search| F[Enter Search Query]
+    F --> G[Query Main SQL DB]
+    G --> H[Display Results in UI]
+
+    %% Delete Logic
+    B -->|Delete| I[Select Item to Remove]
+    I --> J[Fetch Item Data from Main DB]
+    J --> K[Insert Item into Backup DB]
+    K --> L[Delete Item from Main DB]
+    L --> M[Display Deletion Confirmed]
+
+    E --> B
+    H --> B
+    M --> B
+```
 ### How to use?
 
 1. Enable environment
@@ -30,17 +57,11 @@ py -m venv .venv
 ```bash
 pip install -r requirements.txt
 ```
-3. Create '.env' file and store the SQLite path
-```bash
-DATABASE_PATH = "sqlite:///db/database.db"
-BACKUP_DATABASE = "sqlite:///db/database.db"
-```
-4. Run the program using streamlit
+3. Run the program using streamlit
 ```bash
 streamlit run app.py
 ```
-5. Check data on database
-6. Check this out
+4. Check this out
 ```bash
 https://sql-inventory-system.streamlit.app/
 ```
