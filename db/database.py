@@ -52,3 +52,10 @@ class DataContent:
         with Session(engine) as session:
             session.query(Stocks).filter(Stocks.barcode == barcode_id).delete()
             session.commit()
+
+    def get_all_data(self):
+        with Session(engine) as session:
+            all_data = session.query(Stocks).all()
+            for data in all_data:
+                df = pd.DataFrame(data.__dict__ for data in all_data).drop('_sa_instance_state', axis=1)
+                return df

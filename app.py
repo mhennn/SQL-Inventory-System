@@ -5,6 +5,17 @@ import time
 
 data_content = DataContent()
 records = Records()
+column_order = ('id', 'barcode', 'item_name', 'item_price', 'quantity', 'price', 'register_by', 'registration_date')
+column_name = {
+    "id": "ID",
+    "barcode": "Barcode",
+    "item_name": "Item Name",
+    "item_price": "Item Price",
+    "quantity": "Quantity",
+    "price": "Price",
+    "register_by": "Registered By",
+    "registration_date": "Registration Date"
+}
 
 st.set_page_config("SQL Inventory System", layout="wide")
 st.markdown(
@@ -25,6 +36,12 @@ def clear_field():
 
 container = st.container(border=True)
 
+if st.button("DB"):
+    st.dataframe(data_content.get_all_data(),
+                 hide_index=True,
+                 column_order=column_order,
+                 column_config=column_name)
+    
 with container:
     option_buttons = st.columns(2)
     with option_buttons[0]:
